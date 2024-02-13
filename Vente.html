@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Logo.jpg"> <!-- Ajoutez cette ligne pour le logo -->
+
+    <script src="script.js"></script>
+    <title>CampaVibe-Remix</title>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="Logo-removebg-preview-removebg-preview.png" alt="Logo CampaVibeRemix">
+        </div>
+
+        <h1>CampaVibe-Remix</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="info.html" >Info</a></li>
+                <li><a href="Vente.html" >Billets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="terms">
+        <div id="pdfContainer">
+            <iframe class="cv" src="Condition général.pdf" width="50%" height="250" style="text-align: center;"></iframe>
+
+                </div>
+        <input type="checkbox" id="acceptTerms"> <label for="acceptTerms">J'accepte les conditions d'utilisation</label>
+    </div>
+
+    <div id="ticketing">
+        <h2>Billetterie</h2>
+        <p>Achetez votre billet pour <strong>10 euros!</strong></p>
+        <br>
+        <button id="buyTicket">Acheter un billet</button>
+        <div id="errorContainer">
+            <p id="errorMessage">Veuillez accepter les conditions d'utilisation pour acheter un billet.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Mon Festival. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('buyTicket').addEventListener('click', function() {
+            if (!document.getElementById('acceptTerms').checked) {
+                document.getElementById('errorMessage').style.display = 'block';
+            } else {
+                // Ouvrir une nouvelle page HTML
+                window.open("Paypal.html", "_blank");
+            }
+        }); 
+
+        document.getElementById('acceptTerms').addEventListener('change', function() {
+            document.getElementById('buyTicket').disabled = !this.checked;
+            document.getElementById('errorMessage').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
